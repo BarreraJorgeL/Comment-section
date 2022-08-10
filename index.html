@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <title>Interactive comments section</title>
+  <style>
+    @media screen and (min-width: 768px){
+      .position-md-absolute{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-secondary">
+  <div id="app" class="container-md">
+    <commentlist :comments="rootComments"></commentlist>
+    <reply :replyingat="replyingAt" @submit="submitComment"></reply>
+  </div>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
